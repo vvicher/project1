@@ -1,0 +1,44 @@
+@import url('https://fonts.googleapis.com/css?family=Oswald&subset=latin-ext');
+@import url('https://fonts.googleapis.com/css?family=Lato&subset=latin-ext');
+
+// Fonts
+
+$fontMain:    'Lato', sans-serif;
+$fontHeaders: 'Oswald', sans-serif;
+
+// Colors
+
+$color-white:         #fff;
+$color-text-main:     #222;
+$color-background:    #eee;
+$color-link-normal:   #66a879;
+$color-link-hover:    #0d772b;
+$color-border:        #aaa;
+
+// Transitions
+
+$easing: ease-out;
+
+$anim-opacity:        opacity 0.25s $easing;
+$anim-color:          color 0.2s $easing;
+$anim-border-color:   border-color 0.2s $easing;
+$anim-transform:      transform 0.15s $easing;
+
+// Main settings
+
+html, body {
+  height: 100%;
+}
+
+body {
+  background-color: $color-background;
+  font-family: $fontMain;
+  font-size: 16px;
+  color: $color-text-main;
+}
+
+#app {
+  max-width: 50rem;
+  height: 100%;
+  margin: 0 auto;
+}
