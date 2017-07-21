@@ -17,11 +17,3 @@ body {
   height: 100%;
   margin: 0 auto;
 }
-
-
-// Mixins
-
-@mixin common-border-shadow {
-  box-shadow: 0 1px 5px rgba(0,0,0,0.1);
-  border-radius: 3px;
-}

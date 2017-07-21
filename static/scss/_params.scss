@@ -28,3 +28,10 @@ $anim-top:                top 0.2s $easing;
 // Main settings
 
 $gutter:                  0.9375rem;
+
+// Mixins
+
+@mixin common-border-shadow {
+  box-shadow: 0 1px 5px rgba(0,0,0,0.1);
+  border-radius: 3px;
+}

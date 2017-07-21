@@ -8,7 +8,7 @@
       </form>
     </div>
     <results v-if="!beforeSearch"
-      :data="data"
+      :pages="data.query.pages"
       :phrase="phrase"
     ></results>
     <div v-if="errorMessage" class="message">
@@ -28,7 +28,7 @@ export default {
       apiUrl: 'https://pl.wikipedia.org/w/api.php',
       loading: false,
       beforeSearch: true,
-      data: [],
+      data: {},
       errors: [],
       errorMessage: '',
       phrase: '',
@@ -45,14 +45,25 @@ export default {
     },
     fetchData() {
       this.loading = true;
-      axios.get(`${this.apiUrl}?origin=*&action=query&generator=search&utf8=1&format=json&gsrsearch=${this.phrase}`)
+      axios.get(`${this.apiUrl}`, {
+        params: {
+          origin: '*',
+          action: 'query',
+          format: 'json',
+          formatversion: 2,
+          prop: 'pageimages|extracts|info',
+          exintro: '',
+          explaintext: '',
+          inprop: 'url',
+          pithumbsize: 500,
+          utf8: 1,
+          generator: 'search',
+          gsrsearch: this.phrase,
+        },
+      })
       .then((response) => {
         this.data = response.data;
-        const keys = Object.keys(this.data.query.pages);
-        if (keys.length) {
-          for (let i = 0; i < keys.length; i += 1) {
-            this.getItemById(keys[i]);
-          }
+        if (this.data.query.pages.length > 0) {
           this.beforeSearch = false;
           this.loading = false;
         }
@@ -71,9 +82,6 @@ export default {
       if (this.errorMessage.length > 0) {
         this.errorMessage = '';
       }
-    },
-    getItemById(id) {
-      console.log(id); // TODO
     },
   },
   components: {

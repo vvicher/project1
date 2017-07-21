@@ -2,18 +2,24 @@
   <div class="search-results">
     <h2>Wyniki wyszukiwania dla frazy "{{ phrase }}"</h2>
     <ul>
-      <li>{{ data }}</li>
+      <list-item v-for="page in pages" :page="page" :key="page.index"></list-item>
     </ul>
   </div>
 </template>
 
 <script>
+
+import Item from '~component/Item';
+
 export default {
   name: 'results',
   props: [
-    'data',
+    'pages',
     'phrase',
   ],
+  components: {
+    'list-item': Item,
+  },
 };
 </script>
 
