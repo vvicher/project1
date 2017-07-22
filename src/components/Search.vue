@@ -58,6 +58,7 @@ export default {
           pithumbsize: 500,
           utf8: 1,
           generator: 'search',
+          gsrlimit: 20,
           gsrsearch: this.phrase,
         },
       })
