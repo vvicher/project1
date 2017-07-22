@@ -9,7 +9,7 @@ $color-white:             #fff;
 $color-text-main:         #222;
 $color-text-light:        #888;
 $color-background:        #eee;
-$color-accent-normal:     #426791;
+$color-accent:            #426791;
 $color-accent-dark:       #0b3568;
 $color-border:            #aaa;
 $color-error:             #b72222;
@@ -28,6 +28,11 @@ $anim-top:                top 0.2s $easing;
 // Main settings
 
 $gutter:                  0.9375rem;
+
+// Breakpoints
+
+$breakpoint-tablet-from:  30.063em;
+$breakpoint-desktop-from: 48.063em;
 
 // Mixins
 

@@ -115,17 +115,19 @@ export default {
     font-weight: 400;
     text-align: center;
     margin: 0 0 1.5rem;
+    line-height: 1.2em;
   }
 }
 
 .search-container {
   @include common-border-shadow;
   width: calc(100% - #{$gutter} * 2);
+  line-height: 1;
   top: 1.25rem;
   left: 0;
   position: absolute;
   background-color: $color-white;
-  padding: 1.25rem;
+  padding: 1.25rem 1.25rem 1.75rem;
   margin: 0 $gutter;
   transition: $anim-transform, $anim-top;
   transform: translateY(0);
@@ -169,27 +171,30 @@ export default {
 
   input {
     display: block;
-    width: calc(100% - 100px);
+    width: calc(100% - 85px);
     float: left;
-    height: 2.125em;
+    height: 2.125rem;
     outline: none;
     border: 1px solid $color-border;
     transition: $anim-border-color;
     padding: 0 1em;
     font-family: $font-main;
+    font-size: 0.875rem;
 
     &:focus {
-      border-color: $color-accent-normal;
+      border-color: $color-accent;
     }
   }
 
   button {
     display: block;
-    width: 80px;
+    width: 75px;
+    height: 2.125rem;
     float: right;
-    background-color: $color-accent-normal;
+    background-color: $color-accent;
     color: $color-white;
     font-family: $font-main;
+    font-size: 0.875rem;
     text-transform: uppercase;
     padding: 0.5rem 0;
     border: 0;

@@ -1,7 +1,7 @@
 <template>
   <div class="search-results">
     <h2>Wyniki wyszukiwania dla frazy "{{ phrase }}"</h2>
-    <ul>
+    <ul class="results-list">
       <list-item v-for="page in pages" :page="page" :key="page.index"></list-item>
     </ul>
   </div>
@@ -38,13 +38,20 @@ export default {
   h2 {
     font-family: $font-headers;
     font-weight: 400;
+    font-size: 1.5rem;
     border-bottom: 1px solid $color-border;
-    line-height: 1.6;
+    line-height: 1.3;
+    padding: 0.4rem 0;
     margin: 0;
+
+    @media (min-width: $breakpoint-desktop-from) {
+      font-size: 1.625em;
+    }
   }
 
-  ul {
+  .results-list {
     list-style: none;
+    margin-top: 0;
     padding-left: 0;
   }
 }
