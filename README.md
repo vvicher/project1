@@ -1,6 +1,6 @@
 # project1
 
-> A Vue.js project
+> A simple search tool using Wikipedia API, based on Vue.js
 
 ## Build Setup
 

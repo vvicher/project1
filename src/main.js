@@ -5,6 +5,7 @@ import Vue from 'vue';
 import App from './App';
 import router from './router';
 
+require('babel-polyfill');
 require('../node_modules/normalize.css/normalize.css');
 
 Vue.config.productionTip = false;
