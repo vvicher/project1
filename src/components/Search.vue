@@ -9,7 +9,7 @@
     </div>
     <results v-if="!beforeSearch"
       :pages="data.query.pages"
-      :phrase="phrase"
+      :currentPhrase="currentPhrase"
     ></results>
     <div v-if="errorMessage" class="message">
       <p>{{ errorMessage }}</p>
@@ -32,6 +32,7 @@ export default {
       errors: [],
       errorMessage: '',
       phrase: '',
+      currentPhrase: '',
     };
   },
   methods: {
@@ -67,6 +68,7 @@ export default {
         if (this.data.query.pages.length > 0) {
           this.beforeSearch = false;
           this.loading = false;
+          this.currentPhrase = this.phrase;
         }
         this.hideError();
       })

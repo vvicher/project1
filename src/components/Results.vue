@@ -1,6 +1,6 @@
 <template>
   <div class="search-results">
-    <h2>Wyniki wyszukiwania dla frazy "{{ phrase }}"</h2>
+    <h2>Wyniki wyszukiwania dla frazy "{{ currentPhrase }}"</h2>
     <ul class="results-list">
       <list-item v-for="page in pages" :page="page" :key="page.index"></list-item>
     </ul>
@@ -15,7 +15,7 @@ export default {
   name: 'results',
   props: [
     'pages',
-    'phrase',
+    'currentPhrase',
   ],
   components: {
     'list-item': Item,
